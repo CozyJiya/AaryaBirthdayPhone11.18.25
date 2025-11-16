@@ -1,0 +1,89 @@
+body {
+    background: #f2f2f2;
+    font-family: Arial;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* TITLE BELOW DUSTBIN */
+.title {
+    margin-top: 35px;
+    margin-bottom: 45px;
+    font-size: 7vw;
+    font-weight: bold;
+}
+
+/* MAIN CONTAINER */
+.container {
+    position: relative;
+    margin-top: 20px;
+    height: 70vh;
+}
+
+/* 🚮 ULTRA BIG DUSTBIN */
+#dustbin {
+    width: 80vw;              /* EVEN BIGGER */
+    max-width: 380px;         /* MASSIVE */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    position: absolute;
+    bottom: 0.2vh;            /* touching bottom almost */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#dustbin:active {
+    transform: translateX(-50%) scale(0.88);
+}
+
+/* 🎉 ITEMS CLOSER & HUGE */
+#items {
+    position: absolute;
+    bottom: 30vh;             /* MORE distance from dustbin */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* SUPER HUGE ITEMS */
+.item {
+    width: 65vw;              /* MEGA SIZE */
+    max-width: 280px;
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%, 20px) scale(0.45); /* closer + big */
+    transition: opacity 0.7s, transform 0.7s;
+}
+
+/* APPEAR ANIMATION — SHORT RISE */
+.show {
+    opacity: 1;
+    transform: translate(-50%, -22vh) scale(1.25); /* higher + bigger */
+}
+
+/* CAT SPECIAL SIZE */
+#cat {
+    width: 70vw;
+    max-width: 300px;
+}
+
+#cat.show {
+    transform: translate(-50%, -25vh) scale(1.25);
+}
+
+/* 📱 SMALL PHONE BOOST MODE */
+@media (max-width: 450px) {
+    #dustbin {
+        width: 90vw;
+        max-width: 400px;
+    }
+
+    .item {
+        width: 75vw;
+        max-width: 300px;
+    }
+
+    #items {
+        bottom: 20vh;
+    }
+}
